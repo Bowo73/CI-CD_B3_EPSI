@@ -1,0 +1,15 @@
+<p>conversion-form works!</p>
+<form (ngSubmit)="convertCurrency()">
+  <input type="number" [(ngModel)]="amount" name="amount" placeholder="Amount">
+  <select [(ngModel)]="sourceCurrency" name="sourceCurrency">
+      <option *ngFor="let currency of currencies" [value]="currency.code">{{ currency.name }}</option>
+  </select>
+  <select [(ngModel)]="targetCurrency" name="targetCurrency">
+      <option *ngFor="let currency of currencies" [value]="currency.code">{{ currency.name }}</option>
+  </select>
+  <button type="submit">Convert</button>
+</form>
+
+<div *ngIf="conversionResult !== undefined">
+  <p>Conversion Result: {{ conversionResult }}</p>
+</div>
