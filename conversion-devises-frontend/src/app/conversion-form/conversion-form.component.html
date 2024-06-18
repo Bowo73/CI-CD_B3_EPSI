@@ -1,15 +1,39 @@
-<p>conversion-form works!</p>
-<form (ngSubmit)="convertCurrency()">
-  <input type="number" [(ngModel)]="amount" name="amount" placeholder="Amount">
-  <select [(ngModel)]="sourceCurrency" name="sourceCurrency">
-      <option *ngFor="let currency of currencies" [value]="currency.code">{{ currency.name }}</option>
-  </select>
-  <select [(ngModel)]="targetCurrency" name="targetCurrency">
-      <option *ngFor="let currency of currencies" [value]="currency.code">{{ currency.name }}</option>
-  </select>
-  <button type="submit">Convert</button>
-</form>
+<div class="cConversion">
+  <form (ngSubmit)="convertCurrency()">
+    <mat-card>
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>Amount</mat-label>
+          <input matInput type="number" [(ngModel)]="amount" name="amount" placeholder="Amount">
+        </mat-form-field>
 
-<div *ngIf="conversionResult !== undefined">
-  <p>Conversion Result: {{ conversionResult }}</p>
+        <mat-form-field appearance="fill">
+          <mat-label>Source Currency</mat-label>
+          <mat-select [(ngModel)]="sourceCurrency" name="sourceCurrency">
+            <mat-option *ngFor="let currency of currencies" [value]="currency.code">{{ currency.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Target Currency</mat-label>
+          <mat-select [(ngModel)]="targetCurrency" name="targetCurrency">
+            <mat-option *ngFor="let currency of currencies" [value]="currency.code">{{ currency.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Convert</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+
+  <div *ngIf="conversionResult !== undefined" class="cCard">
+    <mat-card class="cCard">
+      <mat-card-content>
+        <p>Conversion Result: {{ conversionResult }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
 </div>

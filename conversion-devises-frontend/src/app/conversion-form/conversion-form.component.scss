@@ -1,0 +1,19 @@
+.cConversion {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cCard {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  .mCard {
+    width: 100%;
+  }
+}
