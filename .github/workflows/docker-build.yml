@@ -25,11 +25,11 @@ jobs:
           username: "icicabz"
           password: "Devops123"
 
-      - name: Build and push Angular app Docker image
-        working-directory: ./conversion-devises-frontend
-        run: |
-          docker build -t icicabz/front .
-          docker push icicabz/front
+      #- name: Build and push Angular app Docker image
+        #working-directory: ./conversion-devises-frontend
+        #run: |
+          #docker build -t icicabz/front .
+          #docker push icicabz/front
 
       - name: Build and push API JavaScript Docker image
         working-directory: ./
