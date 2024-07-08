@@ -28,11 +28,11 @@ jobs:
       - name: Build and push Angular app Docker image
         working-directory: ./conversion-devises-frontend
         run: |
-          docker build -t cicdberard/cicdberard/front .
-          docker push cicdberard/cicdberard/front
+          docker build -t icicabz/front .
+          docker push icicabz/front
 
       - name: Build and push API JavaScript Docker image
         working-directory: ./
         run: |
-          docker build -t cicdberard/cicdberard/api .
-          docker push cicdberard/cicdberard/api
+          docker build -t icicabz/api .
+          docker push icicabz/api
